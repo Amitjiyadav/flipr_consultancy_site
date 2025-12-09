@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Trust – Landing Page</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:"Poppins", Arial, sans-serif;
+      background:#ffffff;
+      color:#1f2933;
+    }
+    a{text-decoration:none;color:inherit;}
+
+    .container{
+      width:92%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .nav{
+      width:100%;
+      padding:14px 0;
+      background:#ffffff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .logo-icon{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      border:2px solid #2f80ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      color:#2f80ff;
+    }
+    .logo-text{
+      font-size:22px;
+      font-weight:700;
+    }
+    .logo-text span:last-child{
+      font-weight:500;
+      color:#4f5f7b;
+      margin-left:4px;
+    }
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:26px;
+      flex:1;
+      justify-content:center;
+    }
+    .nav-links a{
+      font-size:14px;
+      font-weight:500;
+      color:#4b5563;
+    }
+    .nav-links a.active{color:#2f80ff;}
+    .nav-contact{
+      padding:10px 20px;
+      background:#ff7a1a;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:600;
+      border-radius:4px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero{
+      display:flex;
+      margin-top:10px;
+      min-height:420px;
+    }
+    .hero-left{
+      flex:3;
+      position:relative;
+      background:url("https://images.pexels.com/photos/8293770/pexels-photo-8293770.jpeg") center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+      padding:40px;
+    }
+    .hero-overlay-text{
+      color:#ffffff;
+      font-size:40px;
+      line-height:1.1;
+      font-weight:700;
+      max-width:330px;
+      text-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+    .hero-right{
+      flex:2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 30px;
+    }
+
+    .consult-card{
+      width:100%;
+      max-width:320px;
+      background:#3f4f6b;
+      border-radius:10px;
+      padding:30px 24px 24px;
+      color:#ffffff;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    }
+    .consult-card h2{
+      font-size:22px;
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .field{
+      margin-bottom:12px;
+    }
+    .field input{
+      width:100%;
+      padding:10px 12px;
+      border-radius:7px;
+      border:1px solid rgba(255,255,255,0.7);
+      background:transparent;
+      color:#ffffff;
+      font-size:14px;
+      outline:none;
+    }
+    .field input::placeholder{
+      color:#d7deee;
+    }
+    .btn-orange{
+      margin-top:14px;
+      width:100%;
+      padding:11px 14px;
+      border-radius:7px;
+      border:none;
+      background:#ff7a1a;
+      color:#ffffff;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn-orange:hover{background:#e36b13;}
+
+    /* ---------- SECTION TITLES ---------- */
+    .section-title{
+      text-align:center;
+      font-size:26px;
+      font-weight:700;
+      margin-bottom:6px;
+      margin-top:40px;
+    }
+    .underline{
+      width:70px;
+      height:3px;
+      background:#2f80ff;
+      margin:0 auto 14px;
+      border-radius:999px;
+    }
+    .section-sub{
+      text-align:center;
+      max-width:650px;
+      margin:0 auto 26px;
+      font-size:14px;
+      color:#6b7280;
+      line-height:1.6;
+    }
+
+    /* ---------- OUR PROJECTS ---------- */
+    .projects-wrap{
+      padding-bottom:40px;
+      background:#f6f8ff;
+    }
+    .projects-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      justify-content:center;
+    }
+    .project-card{
+      width:215px;
+      background:#ffffff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+    }
+    .project-card img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+    }
+    .project-body{
+      padding:14px 14px 16px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+    .project-name{
+      font-size:14px;
+      font-weight:600;
+      color:#1f2933;
+      margin-bottom:4px;
+    }
+    .project-desc{
+      font-size:12px;
+      color:#6b7280;
+      margin-bottom:10px;
+      flex:1;
+    }
+    .project-btn{
+      display:inline-block;
+      padding:7px 16px;
+      border-radius:4px;
+      background:#ff7a1a;
+      color:#ffffff;
+      font-size:11px;
+      font-weight:600;
+      align-self:flex-start;
+    }
+
+    /* ---------- HAPPY CLIENTS ---------- */
+    .clients-wrap{
+      padding:40px 0 60px;
+      background:#ffffff;
+    }
+    .clients-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      justify-content:center;
+    }
+    .client-card{
+      width:220px;
+      background:#ffffff;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);
+      padding:20px 16px 18px;
+      text-align:center;
+    }
+    .client-img{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      object-fit:cover;
+      margin:0 auto 10px;
+    }
+    .client-desc{
+      font-size:12px;
+      color:#6b7280;
+      line-height:1.6;
+      margin-bottom:10px;
+      height:70px;
+      overflow:hidden;
+    }
+    .client-name{
+      font-size:13px;
+      font-weight:600;
+      color:#2f80ff;
+      margin-bottom:2px;
+    }
+    .client-desig{
+      font-size:11px;
+      color:#9ca3af;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer{
+      padding:18px 0 24px;
+      background:#151822;
+      color:#9ca3af;
+      text-align:center;
+      font-size:12px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:900px){
+      .hero{
+        flex-direction:column;
+      }
+      .hero-left{
+        min-height:260px;
+        padding:30px;
+      }
+      .hero-right{
+        padding:30px 16px 40px;
+      }
+      .hero-overlay-text{
+        font-size:32px;
+      }
+    }
+    @media (max-width:700px){
+      .nav-inner{
+        flex-wrap:wrap;
+      }
+      .nav-links{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo-wrap">
+        <div class="logo-icon">🏠</div>
+        <div class="logo-text">
+          <span>Real</span><span>Trust</span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="{% url 'home'%}" class="active">HOME</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#clients">TESTIMONIALS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-contact">CONTACT</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION + CONTACT FORM -->
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <div class="hero-overlay-text">
+        Consultation,<br>Design,&amp; Marketing
+      </div>
+    </div>
+
+    <div class="hero-right" id="contact">
+      <div class="consult-card">
+        <h2>Get a Free<br>Consultation</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="field">
+            <input type="text" name="full_name" placeholder="Full Name">
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Enter Email Address">
+          </div>
+          <div class="field">
+            <input type="tel" name="mobile" placeholder="Mobile Number">
+          </div>
+          <div class="field">
+            <input type="text" name="city" placeholder="Area, City">
+          </div>
+          <button type="submit" name="contact_submit" class="btn-orange">
+            Get Quick Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROJECTS (demo static content) -->
+  <section class="projects-wrap" id="projects">
+    <div class="container">
+      <h2 class="section-title">Our Projects</h2>
+      <div class="underline"></div>
+      <p class="section-sub">
+        We design and market modern, high–value residential projects that help our clients
+        get the best return on their investment.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="">
+          <div class="project-body">
+            <div class="project-name">Consultation</div>
+            <div class="project-desc">Premium 3BHK villa with curated interiors and smart staging.</div>
+            <span class="project-btn">READ MORE</span>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="">
+          <div class="project-body">
+            <div class="project-name">Design</div>
+            <div class="project-desc">Modern façade redesign that transformed an old property.</div>
+            <span class="project-btn">READ MORE</span>
+          </div>
+        </article>
+        <article class="project-card">
+          <img src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg" alt="">
+          <div class="project-body">
+            <div class="project-name">Marketing &amp; Design</div>
+            <div class="project-desc">Complete visual branding and digital launch campaign.</div>
+            <span class="project-btn">READ MORE</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAPPY CLIENTS (demo static content) -->
+  <section class="clients-wrap" id="clients">
+    <div class="container">
+      <h2 class="section-title">Happy Clients</h2>
+      <div class="underline"></div>
+      <p class="section-sub">
+        Real stories from the people who trusted us with their homes and investments.
+      </p>
+
+      <div class="clients-grid">
+        <article class="client-card">
+          <img class="client-img" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="">
+          <p class="client-desc">
+            “The team handled everything from photos to negotiations.
+            We sold above asking price within a week.”
+          </p>
+          <div class="client-name">Rohit Sharma</div>
+          <div class="client-desig">Home Seller, Indore</div>
+        </article>
+
+        <article class="client-card">
+          <img class="client-img" src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg" alt="">
+          <p class="client-desc">
+            “Great design sense and very clear communication.
+            They turned a simple flat into a showpiece.”
+          </p>
+          <div class="client-name">Sneha Kapoor</div>
+          <div class="client-desig">Investor, Pune</div>
+        </article>
+
+        <article class="client-card">
+          <img class="client-img" src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="">
+          <p class="client-desc">
+            “From consultation to marketing, everything felt smooth and professional.”
+          </p>
+          <div class="client-name">John Lewis</div>
+          <div class="client-desig">NRI Buyer, London</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2025 Real Trust • All Rights Reserved
+    </div>
+  </footer>
+
+</body>
+</html>

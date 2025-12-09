@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Dashboard</h1>
+<ul>
+  <li>Total Projects: {{ projects_count }}</li>
+  <li>Total Clients: {{ clients_count }}</li>
+  <li>Total Contacts: {{ contacts_count }}</li>
+  <li>Total Subscribers: {{ subs_count }}</li>
+</ul>
+
+<a href="{% url 'admin_projects' %}">Manage Projects</a> |
+<a href="{% url 'admin_clients' %}">Manage Clients</a> |
+<a href="{% url 'admin_contacts' %}">View Contacts</a> |
+<a href="{% url 'admin_subscribers' %}">View Subscribers</a>
+{% endblock %}
